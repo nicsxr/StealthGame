@@ -1,23 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int health;
-    
+    public TextMeshProUGUI pHealthText;
+
+    private void Start()
+    {
+        pHealthText.text = "Health: " + health.ToString();
+    }
     public void TakeDamage(int damage)
     {
         health -= damage;
-        Debug.LogError("Player Health " + health);
-    }
-
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            
-        }
+        pHealthText.text = "Health: " + health.ToString();
     }
 }
