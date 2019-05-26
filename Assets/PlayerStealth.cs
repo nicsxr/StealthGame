@@ -21,7 +21,6 @@ public class PlayerStealth : MonoBehaviour
         else if(other.CompareTag("HideZone") && !pc.isCrouched)
         {
             isHidden = false;
-            Debug.Log("not hidden anymore");
         }
     }
     private void OnTriggerExit(Collider other)
@@ -29,7 +28,6 @@ public class PlayerStealth : MonoBehaviour
         if (other.CompareTag("HideZone"))
         {
             isHidden = false;
-            Debug.Log("not hidden");
         }
     }
 
